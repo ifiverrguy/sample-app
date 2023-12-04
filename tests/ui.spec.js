@@ -8,6 +8,7 @@ describe('Sample App UI Test', () => {
     
     const title = await page.title();
     expect(title).toBe('Sample App');
+    
 
     const message = await page.$eval('#message', el => el.textContent);
     expect(message).toBe('Hello World!');
