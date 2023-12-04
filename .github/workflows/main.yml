@@ -30,15 +30,15 @@ jobs:
 
 
     - name: Build Docker image
-      run: docker build -t myapp:${{ github.sha }} .
+      run: docker build -t sample-app:${{ github.sha }} .
 
-    - name: Log in to Amazon ECR
-      uses: aws-actions/amazon-ecr-login@v1
+    # - name: Log in to Amazon ECR
+    #   uses: aws-actions/amazon-ecr-login@v1
 
-    - name: Push image to Amazon ECR
-      run: |
-        docker tag myapp:${{ github.sha }} ${{ secrets.AWS_ECR_REGISTRY }}:latest
-        docker push ${{ secrets.AWS_ECR_REGISTRY }}:latest
+    # - name: Push image to Amazon ECR
+    #   run: |
+    #     docker tag myapp:${{ github.sha }} ${{ secrets.AWS_ECR_REGISTRY }}:latest
+    #     docker push ${{ secrets.AWS_ECR_REGISTRY }}:latest
 
   deploy:
     needs: build-and-test

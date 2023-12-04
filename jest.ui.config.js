@@ -1,6 +1,4 @@
 module.exports = {
-    preset: 'jest-puppeteer',
-    testRegex: './*\\.ui\\.test\\.js$',
-    setupFilesAfterEnv: ['expect-puppeteer']
-  };
-  
+  testEnvironment: 'node',
+  testTimeout: 30000
+};
