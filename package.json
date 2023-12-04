@@ -4,7 +4,7 @@
     "main": "app.js",
     "scripts": {
         "start": "node app.js",
-        "test": "jest",
+        "test:unit": "jest tests/app.test.js",
         "test:ui": "jest --config jest.ui.config.js"
     },
     "dependencies": {
